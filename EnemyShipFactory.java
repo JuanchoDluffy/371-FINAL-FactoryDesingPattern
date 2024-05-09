@@ -22,7 +22,9 @@ public class EnemyShipFactory{
 			return new RocketEnemyShip();
 			
 		} else 
-		
+		if(newShipType.equals("P")){
+            return new PirateEnemyShip();
+        }
 		if (newShipType.equals("B")){
 			
 			return new BigUFOEnemyShip();
