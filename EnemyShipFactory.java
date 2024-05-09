@@ -24,7 +24,10 @@ public class EnemyShipFactory{
 		} else 
 		if(newShipType.equals("P")){
             return new PirateEnemyShip();
-        }
+        }else
+        if (newShipType.equals("S")){
+            return new SuperDestroyerEnemyShip();
+        }else
 		if (newShipType.equals("B")){
 			
 			return new BigUFOEnemyShip();
