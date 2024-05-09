@@ -1,39 +1,30 @@
-// This is a factory thats only job is creating ships
-// By encapsulating ship creation, we only have one
-// place to make modifications
-
+/**
+ * This class represents a factory for creating enemy ships.
+ * By encapsulating ship creation, modifications can be made in a single place.
+ */
 public class EnemyShipFactory{
-	
-	// This could be used as a static method if we
-	// are willing to give up subclassing it
-	
-	public EnemyShip makeEnemyShip(String newShipType){
-		
-		EnemyShip newShip = null;
-		
-		if (newShipType.equals("U")){
-			
-			return new UFOEnemyShip();
-			
-		} else 
-		
-		if (newShipType.equals("R")){
-			
-			return new RocketEnemyShip();
-			
-		} else 
-		if(newShipType.equals("P")){
-            return new PirateEnemyShip();
-        }else
-        if (newShipType.equals("S")){
+    
+    /**
+     * Creates an enemy ship based on the provided ship type.
+     * @param newShipType The type of ship to create.
+     * @return An instance of the created enemy ship.
+     */
+    public EnemyShip makeEnemyShip(String newShipType){
+        
+        EnemyShip newShip = null;
+        
+        if (newShipType.equals("U")){
+            return new UFOEnemyShip();
+        } else if (newShipType.equals("R")){
+            return new RocketEnemyShip();
+        } else if (newShipType.equals("P")){
+            return new SpacePirateEnemyShip();
+        } else if (newShipType.equals("S")){
             return new SuperDestroyerEnemyShip();
-        }else
-		if (newShipType.equals("B")){
-			
-			return new BigUFOEnemyShip();
-			
-		} else return null;
-		
-	}
-	
+        } else if (newShipType.equals("B")){
+            return new BigUFOEnemyShip();
+        } else {
+            return null;
+        }
+    }
 }
